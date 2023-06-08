@@ -2,9 +2,9 @@ from flask import Flask, request
 import joblib
 import numpy
 
-MODEL_PATH = 'mlmodels/model_sell.pkl'
-SCALER_X_PATH = 'mlmodels/scaler_x.pkl'
-SCALER_Y_PATH = 'mlmodels/scaler_y.pkl'
+MODEL_PATH = 'mlmodels/model_rent.pkl'
+SCALER_X_PATH = 'mlmodels/scaler_x_rent.pkl'
+SCALER_Y_PATH = 'mlmodels/scaler_y_rent.pkl'
 
 app = Flask(__name__)
 model = joblib.load(MODEL_PATH)
