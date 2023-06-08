@@ -1,12 +1,12 @@
-<h1> Real Estate Predictions with Yandex Realty </h2>
+<h1> :octocat: Real Estate Predictions with Yandex Realty </h2>
 
-<p> Data source The [dataset](https://github.com/olgaselesnjova/E2E/blob/main/spb.real.estate.archive.sample5000.tsv) is taken from [Yandex.Realty](https://realty.yandex.ru)</p>
+The [dataset](https://github.com/olgaselesnjova/E2E/blob/main/spb.real.estate.archive.sample5000.tsv) is from [Yandex.Realty](https://realty.yandex.ru)
 
-<h3> Dataset description: </h3>
+<h3> :one: Dataset description: </h3>
 
 Real estate listings from Yandex Realty service of 2016 - 2018. 
 
-<h3> EDA and data preparations: </h3>
+<h3> :two: EDA and data preparations: </h3>
 
 1. Price median and mean for sell and rent apartments in St. Petersburg.
 2. Removed outliers: too cheap or expensive apartments. 
@@ -15,13 +15,13 @@ Real estate listings from Yandex Realty service of 2016 - 2018.
 
 File [EDA_real_estate_data.ipynb](https://github.com/olgaselesnjova/E2E/blob/main/EDA_real_estate_data.ipynb) contains the EDA of the dataset.
 
-<h3> Visualizations of the data: </h3>
+<h3> :three: Visualizations of the data: </h3>
 
 ![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/1.JPG)
 ![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/2.JPG)
 ![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/3.JPG)
 
-<h3> Pre-psocessing </h3>
+<h3> :four: Pre-psocessing </h3>
 
 **SimpleImputer** with sklearn's "mean" to replace missing values by the mean value.
 **OneHotEncoder** to convert categorical variables into a format for ML algorithms.
@@ -32,7 +32,7 @@ mapper = DataFrameMapper([([feature], SimpleImputer()) for feature in numeric_fe
                             df_out=True)  
 ```		
 
-<h3> ML </h3>
+<h3> :five: ML </h3>
 
 The data processing and model building process is automated with **pipeline** to increase the efficiency, accuracy and reproducibility of models.
 
@@ -53,9 +53,9 @@ param_grid = dict(xgb__learning_rate = [0.1], xgb__n_estimators = [100], xgb__ma
 xgboost = GridSearchCV(estimator=xgboost_pipeline, param_grid=param_grid, cv=3, n_jobs=2, verbose=2)
 ```
  
-<h3> Run the web-app with virtual environment </h3>
+<h3> :six: Run the web-app with virtual environment </h3>
 	
-<h3> Dockerfile </h3>
+<h4> 🌙 Dockerfile </h4>
 
 The **Dockerfile** runs on Ubuntu:20.04 image. The MAINTAINER command sets the author information for the image. 
 - RUN command - to update the package list on the Ubuntu image. 
@@ -65,7 +65,7 @@ The **Dockerfile** runs on Ubuntu:20.04 image. The MAINTAINER command sets the a
 - RUN - to set the dependencies listed in requirements.txt file. 
 - CMD - to run the app.py file inside the container.
 	
-<h3> Open the port in a VM </h3>
+<h4> 🍀 Open the port in a VM </h4>
 	
 Specify the port in an app in the script **app.py** by setting 
 ```
@@ -79,7 +79,7 @@ sudo ufw allow 5444
 ```
 Use **Postman** to check how the API requests work.  
 
-<h3> Run the app with docker </h3>
+<h4> 🐈‍⬛ Run the app with docker </h4>
 
 Build containers and then run: 
 ```
