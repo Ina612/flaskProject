@@ -1,4 +1,4 @@
-<h1> :octocat: Real Estate Predictions with Yandex Realty </h2>
+<h1> :octocat: Yandex Realty Real Estate Price Predictions </h2>
 
 The [dataset](https://github.com/olgaselesnjova/E2E/blob/main/spb.real.estate.archive.sample5000.tsv) is from [Yandex.Realty](https://realty.yandex.ru)
 
@@ -15,13 +15,7 @@ Real estate listings from Yandex Realty service of 2016 - 2018.
 
 File [EDA_real_estate_data.ipynb](https://github.com/olgaselesnjova/E2E/blob/main/EDA_real_estate_data.ipynb) contains the EDA of the dataset.
 
-<h3> :three: Visualizations of the data: </h3>
-
-![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/1.JPG)
-![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/2.JPG)
-![alt text](https://github.com/olgaselesnjova/E2E/blob/main/images/3.JPG)
-
-<h3> :four: Pre-psocessing </h3>
+<h3> :three: Pre-psocessing </h3>
 
 **SimpleImputer** with sklearn's "mean" to replace missing values by the mean value.
 **OneHotEncoder** to convert categorical variables into a format for ML algorithms.
@@ -32,7 +26,7 @@ mapper = DataFrameMapper([([feature], SimpleImputer()) for feature in numeric_fe
                             df_out=True)  
 ```		
 
-<h3> :five: ML </h3>
+<h3> :four: ML </h3>
 
 The data processing and model building process is automated with **pipeline** to increase the efficiency, accuracy and reproducibility of models.
 
@@ -53,7 +47,7 @@ param_grid = dict(xgb__learning_rate = [0.1], xgb__n_estimators = [100], xgb__ma
 xgboost = GridSearchCV(estimator=xgboost_pipeline, param_grid=param_grid, cv=3, n_jobs=2, verbose=2)
 ```
  
-<h3> :six: Run the web-app with virtual environment </h3>
+<h3> :five: Run the web-app with virtual environment </h3>
 	
 <h4> 🌙 Dockerfile </h4>
 
